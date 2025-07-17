@@ -18,13 +18,13 @@ const Banner = () => {
                 emulateTouch={true}
             >
                 <div>
-                    <img src={bannerImg1} alt="Banner 1" className="h-96 object-cover w-full" />
+                    <img src={bannerImg1} alt="Banner 1" className="h-96 w-full" />
                 </div>
                 <div>
-                    <img src={bannerImg2} alt="Banner 2" className="h-96 object-cover w-full" />
+                    <img src={bannerImg2} alt="Banner 2" className="h-96 w-full" />
                 </div>
                 <div>
-                    <img src={bannerImg3} alt="Banner 3" className="h-96 object-cover w-full" />
+                    <img src={bannerImg3} alt="Banner 3" className="h-96 w-full" />
                 </div>
             </Carousel>
         </div>
