@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import OurServices from '../OurServices/OurServices';
 import CompanySlider from '../CompanySlider/CompanySlider';
+import FeatureTimeline from '../FeatureTimeline/FeatureTimeline';
+import MerchantPromoCard from '../MerchantPromoCard/MerchantPromoCard';
 
 const Home = () => {
     return (
@@ -9,6 +11,8 @@ const Home = () => {
             <Banner></Banner>
             <OurServices></OurServices>
             <CompanySlider></CompanySlider>
+            <FeatureTimeline></FeatureTimeline>
+            <MerchantPromoCard></MerchantPromoCard>
         </div>
     );
 };
