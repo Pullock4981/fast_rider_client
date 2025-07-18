@@ -5,6 +5,7 @@ import FastRiderLogo from '../FastRiderLogo/FastRiderLogo';
 const NavBar = () => {
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/coverage">Coverage</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
 
     </>

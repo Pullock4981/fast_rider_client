@@ -1,8 +1,10 @@
+
+import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import { Link } from "react-router";
 
-const LogIn = () => {
+const Register = () => {
   // Initialize React Hook Form
   const {
     register,
@@ -10,27 +12,27 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
 
-  const { logInUser } = useAuth();
+  const { createUser} = useAuth();
 
   // Handle form submission
   const onSubmit = (data) => {
     console.log("Login Data:", data);
-    logInUser(data.email, data.password)
+    createUser(data.email, data.password)
       .then((userCredential) => {
+        // Signed in
         const user = userCredential.user;
-        console.log("User logged in:", user);
-        // TODO: Redirect after login if needed
+        console.log("User registered:", user);
       })
       .catch((error) => {
-        console.error("Login failed:", error.message);
-        // You can show error to user here
+        console.error("Error registering user:", error);
       });
+    // You can call your API or auth logic here
   };
 
   return (
     <section className="flex justify-center items-center px-4">
       <div className="bg-white rounded-xl shadow-md p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Log In</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">create an account</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           {/* Email Field */}
@@ -80,15 +82,10 @@ const LogIn = () => {
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
           >
-            Log In
+            Register
           </button>
-
-          {/* Link to Register */}
-          <p className="text-center mt-4 text-sm">
-            Don't have an account?{" "}
-            <Link to="/register" className="text-blue-600 underline">
-              Register here
-            </Link>
+          <p>
+            Already have an account? <Link to="/login"><span className="text-blue-700 underline">Login</span></Link>
           </p>
         </form>
       </div>
@@ -96,4 +93,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Register;
