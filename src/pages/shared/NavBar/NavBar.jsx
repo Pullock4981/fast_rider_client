@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import FastRiderLogo from '../FastRiderLogo/FastRiderLogo';
 
 const NavBar = () => {
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/coverage">Coverage</NavLink></li>
+        <li><NavLink to="/sendParcel">SendParcel</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
 
     </>
@@ -34,7 +35,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to="/login" className="btn">Login</Link>
             </div>
         </div>
     );
